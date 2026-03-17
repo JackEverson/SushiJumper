@@ -1,0 +1,3 @@
+[submodule "garden_engine"]
+	path = garden_engine
+	url = https://github.com/JackEverson/garden_engine.git
