@@ -43,11 +43,11 @@ Config.hpp
 add_library(SushiJumper_lib STATIC ${SushiJumper_files})
 target_include_directories(SushiJumper_lib  PUBLIC game)
 target_compile_features(SushiJumper_lib PUBLIC cxx_std_23)
-target_link_libraries(SushiJumper_lib PUBLIC GardenEngine)
+target_link_libraries(SushiJumper_lib PUBLIC garden_engine)
 
 add_executable(SushiJumper SushiJumper.cpp ${APP_ICON_RESOURCE})
 target_link_libraries(SushiJumper PUBLIC
-GardenEngine
+garden_engine
 SushiJumper_lib
 )
 add_dependencies(SushiJumper copy_resources)
