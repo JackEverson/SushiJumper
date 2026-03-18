@@ -32,8 +32,8 @@ private:
 
   Texture m_sushi_texture;
   SpriteInstance m_player_sprite;
-  Texture m_shark_texture;
-  SpriteInstance m_shark_sprite;
+  Texture m_duncan_texture;
+  SpriteInstance m_duncan_sprite;
 
   Texture m_death_texture;
   SpriteInstance m_death_sprite;

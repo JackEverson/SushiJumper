@@ -8,7 +8,7 @@
 MainScene::MainScene()
     : soundManager(SimpleSoundManager::Instance()),
       m_sushi_texture(Texture("./res/textures/sushi.png")),
-      m_shark_texture(Texture("./res/textures/shark.png")),
+      m_duncan_texture(Texture("./res/textures/duncan.png")),
       m_platform_texture(Texture("./res/textures/platform.png")),
       m_rock_texture(Texture("./res/textures/rock.png")),
       m_death_texture(Texture("./res/textures/death_text.png")) {
@@ -25,8 +25,8 @@ MainScene::MainScene()
   m_player_sprite.color = glm::vec4(1.0f, 1.0f, 1.0f, 1.0f);
   m_player_sprite.texture = &m_sushi_texture;
 
-  m_shark_sprite.color = glm::vec4(1.0f, 1.0f, 1.0f, 1.0f);
-  m_shark_sprite.texture = &m_shark_texture;
+  m_duncan_sprite.color = glm::vec4(1.0f, 1.0f, 1.0f, 1.0f);
+  m_duncan_sprite.texture = &m_duncan_texture;
 
   Platform ground;
   ground.position = glm::vec2(0.0f, -0.5f);
@@ -120,9 +120,9 @@ void MainScene::render(GLFWwindow &window, Renderer &renderer) {
   glm::mat4 rotation = glm::rotate(model, angle, axis);
   renderer.RendBatch(rotation, view, projection);
 
-  // shark
+  // duncan
   renderer.BeginBatchDraw(1);
-  renderer.SubmitSprite(m_shark_sprite);
+  renderer.SubmitSprite(m_duncan_sprite);
   model = glm::mat4(1.0f);
   rotation = glm::rotate(model, glm::half_pi<float>(), axis);
   renderer.RendBatch(rotation, view, projection);
@@ -164,9 +164,9 @@ void MainScene::updateLocations() {
   m_camera.SetCamera(0.0f, m_player_sprite.position.y,
                      m_player_sprite.position.z - 1);
 
-  m_shark_sprite.size = glm::vec2(1920.0f / 1080.0f, 1.0f);
-  m_shark_sprite.position =
-      glm::vec3(0.0f, m_fail_y - m_shark_sprite.size.x * 0.5, 0.002f);
+  m_duncan_sprite.size = glm::vec2(1920.0f / 1080.0f, 1.0f);
+  m_duncan_sprite.position =
+      glm::vec3(0.0f, m_fail_y - m_duncan_sprite.size.x * 0.5, 0.002f);
 
   m_death_sprite.position =
       glm::vec3(0.0f, m_player_sprite.position.y, m_death_sprite.position.z);
