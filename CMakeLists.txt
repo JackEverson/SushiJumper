@@ -40,6 +40,10 @@ src/MainScene.hpp
 src/Config.hpp
 )
 
+if(MSVC)
+  set(APP_ICON_RESOURCE "${CMAKE_CURRENT_SOURCE_DIR}/resources.rc")
+endif()
+
 add_library(SushiJumper_lib STATIC ${SushiJumper_files})
 target_include_directories(SushiJumper_lib  PUBLIC game)
 target_compile_features(SushiJumper_lib PUBLIC cxx_std_23)
